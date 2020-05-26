@@ -82,6 +82,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ 0,                       XK_F12,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,				XK_F2, 		spawn,			SHCMD("colpick") },
 
   /* realod colorscheme */
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
