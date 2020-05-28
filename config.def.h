@@ -6,8 +6,8 @@ static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "xos4 Terminus:size=10",
-	 "MaterialDesignIcons:style=Regular:size=11",
+static const char *fonts[]          = { "mononoki Nerd Font: size=11",
+	 "MaterialDesignIcons:style=Regular:size=14",
   };
 static const char dmenufont[]       = "monospace:size=10";
 static char normbgcolor[]           = "#222222";
@@ -80,8 +80,8 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	//{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	//{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ 0,                       XK_F12,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,				XK_F2, 		spawn,			SHCMD("colpick") },
@@ -136,7 +136,8 @@ static Key keys[] = {
 	/* programs */
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("dmenu_run -c -l 20") },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	//{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_Return, spawn,          SHCMD("$TERMINAL") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER") },
 	{ MODKEY,                       XK_g,      spawn,          SHCMD("geany") },
 	{ MODKEY|ShiftMask,                       XK_r,      spawn,          SHCMD("killall -q dwm") },
